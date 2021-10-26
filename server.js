@@ -3,6 +3,7 @@ const express = require('express');
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const consoleTable = require('console.table');
+const { restoreDefaultPrompts } = require('inquirer');
 
 // port 
 const PORT = process.envPORT | 3000;
@@ -42,19 +43,34 @@ function init() {
     })
     .then((response) => {
     // view responses for all the choices
-    
 
+    })
 }
-}
-
-  
 
 
+// to view deparment
+db.query(`SELECT * FROM department`, (err, result) => {
+    if (err) {
+        throw err
+    }
+    console.table(result);
+  });
 
+// to view roles
+db.query(`SELECT * FROM roles`, (err, result) => {
+    if (err) {
+        throw err
+    }
+    console.table(result);
+  });
 
-
-
-
+// to view employee
+db.query(`SELECT * FROM employee`, (err, result) => {
+    if (err) {
+        throw err
+    }
+    console.table(result);
+  });
 
 
 
@@ -82,7 +98,3 @@ function init() {
 // THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
 // WHEN I choose to update an employee role
 // THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
-
-
-
-
