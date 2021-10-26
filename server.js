@@ -8,6 +8,23 @@ const consoleTable = require('console.table');
 const PORT = process.envPORT | 3000;
 const app = express();
 
+// middleware
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+const db = mysql.createConnection(
+    {
+      host: 'localhost',
+      user: 'root',
+      password: 'password',
+      database: 'employees_db'
+    },
+    console.log(`Connected to the employees_db database.`)
+  );
+
+  
+  
+
 
 
 
