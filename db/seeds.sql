@@ -17,12 +17,15 @@ VALUES  ('CEO',10000000,1),
 
 
 INSERT INTO employee (first_name,last_name,role_id,manager_id)
-VALUES  ('Harry','Potter',1,1),
-        ('Hermoine','Granger',5,3),
-        ('Ron','Weasly',3,2),
-        ('Draco','Malfoy',6,8),
-        ('Ginny','Weasley',8,0),
-        ('Cedric','Diggory',12,0),
-        ('Albert','Dumbledore',10,4),
-        ('Neville','Longbottom',9,0),
-        ('Severus','Snape',15,0);
+VALUES  ('Harry','Potter',1,NULL),
+        ('Hermoine','Granger',5,NULL),
+        ('Ron','Weasly',3,1),
+        ('Draco','Malfoy',6,1),
+        ('Ginny','Weasley',8,1),
+        ('Cedric','Diggory',12,1),
+        ('Albert','Dumbledore',10,1),
+        ('Neville','Longbottom',9,1),
+        ('Severus','Snape',15,NULL);
+       
+
+       
