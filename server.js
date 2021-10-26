@@ -42,7 +42,7 @@ function init() {
         ]
     })
     .then((response) => {
-    // view responses for all the choices
+    // view responses for all the choices if chosen
 
     })
 }
@@ -73,7 +73,22 @@ db.query(`SELECT * FROM employee`, (err, result) => {
   });
 
 
-
+// add a department
+function addDepartment(){
+    inquirer.prompt()[{
+        type:'input',
+        message:'What is the name of the department?',
+        name:'department_name', 
+    }]
+    .then((depResults) => {
+        db.query(`INSERT INTO department (department_name) VALUES ('${depResults.department_name}')`, (err, result) => {
+            if (err) {
+                throw err
+            }
+            console.table(result);
+          });  
+    })
+}
 
 
 
