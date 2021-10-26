@@ -22,7 +22,31 @@ const db = mysql.createConnection(
     console.log(`Connected to the employees_db database.`)
   );
 
-  
+// prompts from inquirer
+// init function 
+
+function init() {
+    inquirer.prompt({
+        type:'list',
+        message:'What would you like to do?',
+        name:'start',
+        choices:[
+            'View all departments',
+            'Add a department',
+            'View all roles',
+            'Add a role',
+            'View all employees',
+            'Add an employee',
+            'Update employee role',
+        ]
+    })
+    .then((response) => {
+    // view responses for all the choices
+    
+
+}
+}
+
   
 
 
